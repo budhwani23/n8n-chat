@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>n8n Chat</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="settings-container">
+    <label for="provider-select">LLM Provider:</label>
+    <select id="provider-select">
+      <option value="openai">OpenAI</option>
+      <option value="groq">Groq</option>
+      <option value="gemini">Gemini</option>
+      <option value="openrouter">OpenRouter</option>
+      <option value="cerebras">Cerebras</option>
+    </select>
+    <input type="text" id="api-key-input" placeholder="Enter API Key" />
+    <button id="save-settings-btn">Save</button>
+  </div>
+  <div id="chat-container">
+    <div id="chat-window"></div>
+    <form id="chat-form">
+      <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required />
+      <button type="submit" id="send-btn">Send</button>
+    </form>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 

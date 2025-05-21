@@ -1,0 +1,137 @@
+/* Reset and base styles */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    min-width: 500px;
+    min-height: 600px;
+    box-sizing: border-box;
+  }
+  
+  /* Basic layout containers */
+  #settings-container {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  #chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+  }
+  
+  /* Settings elements */
+  #settings-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  #provider-select, #api-key-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  #save-settings-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  #save-settings-btn:hover {
+    background-color: #3367d6;
+  }
+  
+  /* Chat window */
+  #chat-window {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+  }
+  
+  /* Messages */
+  .message {
+    margin-bottom: 15px;
+  }
+  
+  .message.user {
+    text-align: right;
+  }
+  
+  .bubble {
+    display: inline-block;
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .bubble.user {
+    background-color: #4285f4;
+    color: white;
+    border-bottom-right-radius: 4px;
+  }
+  
+  .bubble.bot {
+    background-color: #e9e9e9;
+    color: #333;
+    border-bottom-left-radius: 4px;
+    text-align: left;
+  }
+  
+  /* Chat form */
+  #chat-form {
+    display: flex;
+    gap: 10px;
+  }
+  
+  #user-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+  
+  #send-btn {
+    padding: 0 20px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  #send-btn:hover {
+    background-color: #3367d6;
+  }
+  
+  /* Make sure everything is visible */
+  * {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
