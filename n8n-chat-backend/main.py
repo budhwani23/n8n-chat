@@ -209,9 +209,20 @@ async def chat(req: ChatRequest):
 
     prompt = req.message
     is_workflow = is_workflow_request(req.message) # Call once and store
+    user_workflow_description = req.message # Default
 
     if is_workflow:
-        prompt = LLM_WORKFLOW_PROMPT_TEMPLATE.format(USER_NATURAL_LANGUAGE_REQUEST=req.message)
+        user_workflow_description = req.message # Fallback
+        prefixes = ["create workflow:", "build workflow:", "generate workflow:"]
+        req_message_lower = req.message.lower()
+        for prefix in prefixes:
+            if req_message_lower.startswith(prefix):
+                user_workflow_description = req.message[len(prefix):].strip()
+                break
+        prompt = LLM_WORKFLOW_PROMPT_TEMPLATE.format(USER_NATURAL_LANGUAGE_REQUEST=user_workflow_description)
+    else: # This else is technically not needed if prompt is already req.message, but for clarity
+        prompt = req.message
+
     try:
         response = llm.invoke([{"role": "user", "content": prompt}])
         llm_reply_text = getattr(response, "content", None) or getattr(response, "text", None) or str(response)
